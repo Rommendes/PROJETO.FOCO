@@ -445,7 +445,7 @@ h1, h2, h3, h4, h5, h6 {
     cursor: inherit;
 }
 
-.app__section-task-list-item-active .app__section-task-list-item {
+.app__section-task-list-item-active  {
     border: 2px solid #FFF;
 }
 
