@@ -454,14 +454,13 @@ h1, h2, h3, h4, h5, h6 {
 }
  */
 
-.app__section-task-list-item-complete  {
-    fill: #00F4BF;
-}
 
-/* .app__section-task-list-item-complete .app__section-task-icon-status circle {
+
+ .app__section-task-list-item-complete 
+ .app__section-task-icon-status circle {
     fill: #00F4BF;
 }
- */
+ 
 .app__form-add-task {
     padding: 1.6rem;
     border-radius: 0.8rem;

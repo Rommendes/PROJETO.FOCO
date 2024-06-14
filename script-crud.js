@@ -76,7 +76,7 @@ function criarElementoTarefa(tarefa) {
     if (tarefaSelecionada == tarefa) {
       paragrafo.textContent = "";
       tarefaSelecionada = null;
-      liTarefaSelecionada = null
+      //liTarefaSelecionada = null
       return;
     }
 
@@ -84,7 +84,7 @@ function criarElementoTarefa(tarefa) {
     liTarefaSelecionada = li;
     paragrafoDescricaoTarefa.textContent = tarefa.descricao;
 
-    li.classList.add("app__section-task-list-item-active");
+    li.classList.add('app__section-task-list-item-active');
   };
   return li;
 }
@@ -117,7 +117,7 @@ tarefas.forEach((tarefa) => {
   console.log("TESTE", elementoTarefa);
 });
 
-document.addEventListener("FocoFinalizado", () => {
+document.addEventListener('FocoFinalizado', () => {
   if (tarefaSelecionada && liTarefaSelecionada) {
     liTarefaSelecionada.classList.remove('app__section-task-list-item-active');
     liTarefaSelecionada.classList.add('.app__section-task-list-item-complete');
