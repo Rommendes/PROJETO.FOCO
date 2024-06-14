@@ -76,6 +76,7 @@ function criarElementoTarefa(tarefa) {
     if (tarefaSelecionada == tarefa) {
       paragrafo.textContent = "";
       tarefaSelecionada = null;
+      liTarefaSelecionada = null
       return;
     }
 
@@ -111,17 +112,18 @@ formAdicionarTarefa.addEventListener("submit", (evento) => {
 });
 tarefas.forEach((tarefa) => {
   const elementoTarefa = criarElementoTarefa(tarefa);
+  atualizarTarefas()
   ulTarefas.append(elementoTarefa);
   console.log("TESTE", elementoTarefa);
 });
 
 document.addEventListener("FocoFinalizado", () => {
   if (tarefaSelecionada && liTarefaSelecionada) {
-    liTarefaSelecionada.classList.remove("app__section-task-list-item-active");
-    liTarefaSelecionada.classList.add("app__section-task-list-item-complete");
+    liTarefaSelecionada.classList.remove('app__section-task-list-item-active');
+    liTarefaSelecionada.classList.add('.app__section-task-list-item-complete');
     liTarefaSelecionada
       .querySelector("button")
-      .setAttribute("disable", "disable");
+      .setAttribute("disabled", "disabled");
   }
 });
 

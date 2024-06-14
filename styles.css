@@ -445,15 +445,23 @@ h1, h2, h3, h4, h5, h6 {
     cursor: inherit;
 }
 
-.app__section-task-list-item-active  {
+.app__section-task-list-item-active {
     border: 2px solid #FFF;
 }
 
+/* .app__section-task-list-item-active .app__section-task-list-item {
+    border: 2px solid #FFF;
+}
+ */
 
-.app__section-task-list-item-complete .app__section-task-icon-status circle {
+.app__section-task-list-item-complete  {
     fill: #00F4BF;
 }
 
+/* .app__section-task-list-item-complete .app__section-task-icon-status circle {
+    fill: #00F4BF;
+}
+ */
 .app__form-add-task {
     padding: 1.6rem;
     border-radius: 0.8rem;
