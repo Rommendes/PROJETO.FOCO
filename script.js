@@ -7,9 +7,17 @@ const titulo = document.querySelector('.app__title');
 const botoes = document.querySelectorAll(".app__card-button");
 const startPauseBT = document.querySelector("#start-pause");
 const playPause = document.querySelector(".app__card-primary-butto-icon");
+
+const musicaFocoImput = document.querySelector("#alternar-musica");
+
+//const playPause = document.querySelector(".app__card-primary-butto-icon");
+const p = document.querySelector(".app__card-primary-butto-icon");
+
+const iniciarOuPausarBt = document.querySelector('#start-pause span')
+const iniciarOuPausarBtIcone = document.querySelector(".app__card-primary-butto-icon") 
 const tempoNatela = document.querySelector("#timer");
 const comecarParar = document.querySelector("#button-text");
-const musicaFocoImput = document.querySelector("#alternar-musica");
+
 
 const musica = new Audio("/sons/luna-rise-part-one.mp3");
 const audioPlay = new Audio("/sons/play.wav");

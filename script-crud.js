@@ -19,8 +19,8 @@ function atualizarTarefas() {
 }
 function criarElementoTarefa(tarefa) {
   const li = document.createElement("li");
-  li.classList.add("app__section-task-list-item"); //task = tarefa
-  //app__section-task-list-item-active
+  li.classList.add("app__section-task-list-item"); 
+
   const svg = document.createElement("svg");
   svg.innerHTML = `
         <svg class="app__section-task-icon-status" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -127,7 +127,7 @@ document.addEventListener("FocoFinalizado", () => {
 });
 
 removerTarefas = (somenteCompletas) => {
-  // const seletor = somenteCompletas? '.app__section-task-list-item-complete' : ".app__section-task-list-item";
+ 
 
   let seletor = ".app__section-task-list-item";
   if (somenteCompletas) {
@@ -142,6 +142,6 @@ removerTarefas = (somenteCompletas) => {
   atualizarTarefas();
 };
 btnRemoverConcluidas.onclick = () => removerTarefas(true);
-btnRemoverTodas.onfullscreenerror = () => removerTarefas(false);
+btnRemoverTodas.onClick = () => removerTarefas(false);
 
 //});
