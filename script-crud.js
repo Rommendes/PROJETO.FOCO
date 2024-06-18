@@ -9,6 +9,7 @@ const paragrafoDescricaoTarefa = document.querySelector(".app__section-active-ta
 
 const btnRemoverConcluidas = document.querySelector("#btn-remover-concluidas");
 const btnRemoverTodas = document.querySelector("#btn-remover-todas");
+const btnCancelar = document.querySelector('.app__form-footer__button--cancel');
 
 let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
 let tarefaSelecionada = null;
@@ -48,6 +49,8 @@ function criarElementoTarefa(tarefa) {
       tarefa.descricao = novaDescricao;
       atualizarTarefas();
     }
+
+    
   };
 
   const imagemDoBotao = document.createElement("img");
@@ -140,6 +143,11 @@ removerTarefas = (somenteCompletas) => {
   atualizarTarefas();
 };
 btnRemoverConcluidas.onclick = () => removerTarefas(true);
-btnRemoverTodas.onClick = () => removerTarefas(false);
+btnRemoverTodas.onclick = () => removerTarefas(false);
 
+const limparFormulario = () => {
+  textarea.value = "";
+  formAdicionarTarefa.add('hidden')
+}
+btnCancelar.addEventListener("click", limparFormulario)
 //});

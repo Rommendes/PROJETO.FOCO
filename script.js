@@ -25,7 +25,7 @@ const audioPlay = new Audio("/sons/play.wav");
 const audioPause = new Audio("/sons/pause.mp3");
 const audioTempoFinalizado = new Audio("/sons/beep.mp3");
 
-let tempoDecorridoEmSegundos = 1500;
+let tempoDecorridoEmSegundos = 10;
 let intervaloId = null;
 
 musica.volume = 0.5;
