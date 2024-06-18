@@ -1,9 +1,9 @@
-const html = document.querySelector('html');
+const html = document.querySelector("html");
 const focoBt = document.querySelector(".app__card-button--foco");
 const curtoBt = document.querySelector(".app__card-button--curto");
 const longoBt = document.querySelector(".app__card-button--longo");
-const banner = document.querySelector('.app__image');
-const titulo = document.querySelector('.app__title');
+const banner = document.querySelector(".app__image");
+const titulo = document.querySelector(".app__title");
 const botoes = document.querySelectorAll(".app__card-button");
 const startPauseBT = document.querySelector("#start-pause");
 const playPause = document.querySelector(".app__card-primary-butto-icon");
@@ -13,11 +13,12 @@ const musicaFocoImput = document.querySelector("#alternar-musica");
 //const playPause = document.querySelector(".app__card-primary-butto-icon");
 const p = document.querySelector(".app__card-primary-butto-icon");
 
-const iniciarOuPausarBt = document.querySelector('#start-pause span')
-const iniciarOuPausarBtIcone = document.querySelector(".app__card-primary-butto-icon") 
+const iniciarOuPausarBt = document.querySelector("#start-pause span");
+const iniciarOuPausarBtIcone = document.querySelector(
+  ".app__card-primary-butto-icon"
+);
 const tempoNatela = document.querySelector("#timer");
 const comecarParar = document.querySelector("#button-text");
-
 
 const musica = new Audio("/sons/luna-rise-part-one.mp3");
 const audioPlay = new Audio("/sons/play.wav");
@@ -36,7 +37,7 @@ musicaFocoImput.addEventListener("change", () => {
     musica.pause();
   }
 });
-console.log('Toca musica: ', musica);
+console.log("Toca musica: ", musica);
 
 focoBt.addEventListener("click", () => {
   tempoDecorridoEmSegundos = 1500;
@@ -55,25 +56,28 @@ longoBt.addEventListener("click", () => {
 });
 
 function alterarContexto(contexto) {
-  console.log(`alterar contexto chamado: ${contexto}` );
+  console.log(`alterar contexto chamado: ${contexto}`);
   mostrarTempo();
-  botoes.forEach(function(contexto) {
+  botoes.forEach(function (contexto) {
     contexto.classList.remove("active");
   });
 
   html.setAttribute("data-contexto", contexto);
   banner.setAttribute("src", `/imagens/${contexto}.png`); // NÃO havia CONSEGUI PASSAR AS IMAGENS AQUI
-  
-  
-    banner.onload = () => {
-      console.log(`Imagem carregada com sucesso:,`, "src",`/imagens/${contexto}.png`);
-    };
-    banner.onerror = () => {
-      console.error(`Erro ao carregar imagem`);
-    };
-    console.log(`Alterando para o contexto:`, 'src', `/imagens/${contexto}.png`);
-    console.log(`Caminho da imagem: `, "src", `/imagens/${contexto}.png`);
-    
+
+  banner.onload = () => {
+    console.log(
+      `Imagem carregada com sucesso:,`,
+      "src",
+      `/imagens/${contexto}.png`
+    );
+  };
+  banner.onerror = () => {
+    console.error(`Erro ao carregar imagem`);
+  };
+  console.log(`Alterando para o contexto:`, "src", `/imagens/${contexto}.png`);
+  console.log(`Caminho da imagem: `, "src", `/imagens/${contexto}.png`);
+
   switch (contexto) {
     case "foco":
       titulo.innerHTML = `Maximize sua eficiência, <br>
@@ -100,18 +104,18 @@ const contagemRegressiva = () => {
   if (tempoDecorridoEmSegundos <= 0) {
     //audioTempoFinalizado.play()
     alert("Tempo finalizado");
-    const focoAtivo = html.getAttribute("data-contexto") == 'foco'
-    if(focoAtivo) {
-      const evento = new CustomEvent('FocoFinalizado')
-      document.dispatchEvent(evento)
+    const focoAtivo = html.getAttribute("data-contexto") == "foco";
+    if (focoAtivo) {
+      const evento = new CustomEvent("FocoFinalizado");
+      document.dispatchEvent(evento);
     }
-      zerar();
-  
+    zerar();
+
     return;
   }
   tempoDecorridoEmSegundos -= 1;
-  console.log('Temporizador ' + tempoDecorridoEmSegundos)
-  console.log("Id: " + intervaloId)
+  console.log("Temporizador " + tempoDecorridoEmSegundos);
+  console.log("Id: " + intervaloId);
   mostrarTempo();
 };
 
@@ -128,6 +132,8 @@ function iniciarOuPausar() {
 }
 function zerar() {
   clearInterval(intervaloId);
+  iniciarOuPausarBt.textContent = "Começar";
+  iniciarOuPausarBtIcone.setAttribute("src", `/imagens/play_arrow.png`);
   intervaloId = null;
 }
 
@@ -158,7 +164,7 @@ function toggleIcone() {
   } else {
     alterarIconeTitulo("play_arrow", "Começar");
   }
-  console.log( 'AQUI', currentIcon);
+  console.log("AQUI", currentIcon);
 }
 // Correção na adição do evento click
 startPauseBT.addEventListener("click", toggleIcone);

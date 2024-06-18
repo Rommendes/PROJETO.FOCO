@@ -127,8 +127,6 @@ document.addEventListener("FocoFinalizado", () => {
 });
 
 removerTarefas = (somenteCompletas) => {
- 
-
   let seletor = ".app__section-task-list-item";
   if (somenteCompletas) {
     seletor = ".app__section-task-list-item-complete";
