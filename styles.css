@@ -519,13 +519,27 @@ h1, h2, h3, h4, h5, h6 {
     gap: 0.8rem;
 }
 
-.app__form-footer__button--confirm {
+.app__form-footer__button--confirm 
+{
     border-radius: 3.2rem;
     padding: 0.8rem 2.4rem;
     color: #fff;
     background: var(--grafite);
 }
-
+.app__form-footer__button--cancel 
+{
+    border-radius: 3.2rem;
+    padding: 0.8rem 2.4rem;
+    color: #fff;
+    background: var(--grafite);
+}
+.app__form-footer__button--delete
+{
+    border-radius: 3.2rem;
+    padding: 0.8rem 2.4rem;
+    color: #fff;
+    background: var(--grafite);
+}
 .app__button--add-task {
     border: none;
     cursor: pointer;
